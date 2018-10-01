@@ -1,6 +1,7 @@
 ﻿Public Class Form1
-    Dim units As Integer
-    Dim adder As Integer
+    Dim EXP As Integer = 0
+    Dim LVL As Integer = LblLVL.Text
+    Dim LVLUpCost As Integer = 0
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -10,8 +11,19 @@
     End Sub
 
     Sub clickF()
-        units += 1 + adder
+        EXP += 1 + LVL
     End Sub
 
+    Private Sub BtnLVLUp_Click(sender As Object, e As EventArgs) Handles BtnLVLUp.Click
+        If EXP >= LVLUpCost Then
+            EXP = EXP - LVLUpCost
+            LVL = LVL + 1
+            LVLUpCostCalc()
+        End If
+    End Sub
+
+    Sub LVLUpCostCalc()
+        LVLUpCost = Math.Ceiling(LVL * Math.Log10(5 * LVL))
+    End Sub
 
 End Class
