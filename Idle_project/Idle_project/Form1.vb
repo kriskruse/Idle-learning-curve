@@ -10,6 +10,7 @@
 
     Private Sub btnMain_Click(sender As Object, e As EventArgs) Handles btnMain.Click
         clickF()
+        UpdateLabels()
     End Sub
 
     Sub clickF()
@@ -22,12 +23,18 @@
             LVL += 1
             LblLVL.Text = LVL
             LVLUpCostCalc()
-            lblLVLCost.Text = LVLUpCost
+            UpdateLabels()
         End If
     End Sub
 
     Sub LVLUpCostCalc()
-        LVLUpCost = Math.Ceiling(LVL * Math.Log10(5 * LVL))
+        LVLUpCost = Math.Round(LVL * Math.Pow(LVL, 0.25 * LVL))
+    End Sub
+
+    Sub UpdateLabels()
+        LblEXP.Text = EXP
+        LblLVL.Text = LVL
+        lblLVLCost.Text = LVLUpCost
     End Sub
 
 
