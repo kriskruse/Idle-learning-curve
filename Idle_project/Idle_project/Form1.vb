@@ -1,6 +1,6 @@
 ﻿Public Class Form1
     Dim EXP As Integer = 0
-    Dim LVL As Integer = LblLVL.Text
+    Dim LVL As Integer = 1
     Dim LVLUpCost As Integer = 0
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -18,7 +18,9 @@
         If EXP >= LVLUpCost Then
             EXP = EXP - LVLUpCost
             LVL = LVL + 1
+            LblLVL.Text = LVL
             LVLUpCostCalc()
+            lblLVLCost.Text = LVLUpCost
         End If
     End Sub
 
