@@ -17,7 +17,7 @@
     Private Sub BtnLVLUp_Click(sender As Object, e As EventArgs) Handles BtnLVLUp.Click
         If EXP >= LVLUpCost Then
             EXP = EXP - LVLUpCost
-            LVL = LVL + 1
+            LVL += 1
             LVLUpCostCalc()
         End If
     End Sub
