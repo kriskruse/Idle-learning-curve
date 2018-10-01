@@ -1,6 +1,6 @@
 ﻿Public Class Form1
     Dim units As Integer
-    Dim adders As Integer
+    Dim adder As Integer
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -10,7 +10,7 @@
     End Sub
 
     Sub clickF()
-        units += 1 + adders
+        units += 1 + adder
     End Sub
 
 
