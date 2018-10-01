@@ -12,7 +12,7 @@
     End Sub
 
     Sub clickF()
-        EXP += 1 + LVL
+        EXP += 1 + Math.Pow(LVL, 0.2 * LVL)
     End Sub
 
     Private Sub BtnLVLUp_Click(sender As Object, e As EventArgs) Handles BtnLVLUp.Click
