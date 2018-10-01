@@ -26,7 +26,7 @@
     End Sub
 
     Sub LVLUpCostCalc()
-        LVLUpCost = Math.Ceiling(LVL * Math.Log10(5 * LVL))
+        LVLUpCost = Math.Round(LVL * Math.Pow(LVL, 0.25 * LVL))
     End Sub
 
     Sub UpdateLabels()
