@@ -28,6 +28,8 @@ Partial Class Form1
         Me.LblEXP = New System.Windows.Forms.Label()
         Me.LblLVL = New System.Windows.Forms.Label()
         Me.BtnLVLUp = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblLVLCost = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnMain
@@ -89,12 +91,34 @@ Partial Class Form1
         Me.BtnLVLUp.Text = "Level up"
         Me.BtnLVLUp.UseVisualStyleBackColor = True
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(265, 169)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(28, 13)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Cost"
+        '
+        'lblLVLCost
+        '
+        Me.lblLVLCost.AutoSize = True
+        Me.lblLVLCost.ForeColor = System.Drawing.Color.White
+        Me.lblLVLCost.Location = New System.Drawing.Point(265, 182)
+        Me.lblLVLCost.Name = "lblLVLCost"
+        Me.lblLVLCost.Size = New System.Drawing.Size(13, 13)
+        Me.lblLVLCost.TabIndex = 7
+        Me.lblLVLCost.Text = "0"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(600, 366)
+        Me.Controls.Add(Me.lblLVLCost)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtnLVLUp)
         Me.Controls.Add(Me.LblLVL)
         Me.Controls.Add(Me.LblEXP)
@@ -115,4 +139,6 @@ Partial Class Form1
     Friend WithEvents LblEXP As Label
     Friend WithEvents LblLVL As Label
     Friend WithEvents BtnLVLUp As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lblLVLCost As Label
 End Class
