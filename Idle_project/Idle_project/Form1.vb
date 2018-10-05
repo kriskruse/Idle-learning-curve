@@ -1,6 +1,7 @@
 ﻿Public Class Form1
-    Dim EXP As Integer = 0              'experience, used as currency for leveling up
+    Dim EXP As Integer = 0              'experience, used as currency for leveling up, modifiers for EXP gained include: perception, monsters and (special bonus for endgame)
     Dim LVL As Integer = 1              'Levels, used to increase amount of experience gained per click/autoclick
+    Dim DarkVisionLVL As Integer = 0    'Levels in skill: Darkvision, Used to increase EXP gained and to unlock next part of the story.
     Dim LVLUpCost As Integer = 0        'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
     Dim AutoClick1_cost As Integer = 50 'Cost of autoclicker, going to be based on some mathemagics
     Dim AutoclickExp = 0                'Unknown, Kris can probably explain what it's going to be used for
@@ -15,7 +16,7 @@
     End Sub
 
     Sub clickF()    'Calculates and adds the amount of EXP added per click
-        EXP += 1 + Math.Pow(LVL, 0.2 * LVL) 'the gotten EXP is based on this calculation: 1 + LVL^(0,2 * LVL)
+        EXP += 1 + Math.Pow(LVL, 0.1 * LVL) 'the gotten EXP is based on this calculation: 1 + LVL^(0,1 * LVL)
     End Sub
 
     Private Sub BtnLVLUp_Click(sender As Object, e As EventArgs) Handles BtnLVLUp.Click 'Button to activate different functions and calculations for leveling up
@@ -28,7 +29,7 @@
     End Sub
 
     Sub LVLUpCostCalc()             'Calculates what the next level costs.
-        LVLUpCost = 1 + Math.Pow(LVL, 0.25 * LVL)   'sets the levelcost, based on the calculation: 1 + LVL^(0,25 * LVL)
+        LVLUpCost = 1 + Math.Pow(LVL, 0.15 * LVL)   'sets the levelcost, based on the calculation: 1 + LVL^(0,15 * LVL)
     End Sub
 
     Sub UpdateLabels()              'Updates the Labels by setting the text of them equal to the actual values.
@@ -53,5 +54,12 @@
         If EXP >= AutoClick1_cost Then
             AutoclickExp += 1
         End If
+    End Sub
+
+    Private Sub BtnDarkVision_Click(sender As Object, e As EventArgs) Handles BtnDarkVision.Click
+
+
+
+
     End Sub
 End Class
