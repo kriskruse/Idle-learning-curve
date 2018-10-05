@@ -18,26 +18,30 @@
         EXP += 1 + Math.Pow(LVL, 0.2 * LVL) 'the gotten EXP is based on this calculation: 1 + LVL^(0,2 * LVL)
     End Sub
 
-    Private Sub BtnLVLUp_Click(sender As Object, e As EventArgs) Handles BtnLVLUp.Click
-        If EXP >= LVLUpCost Then
-            EXP -= LVLUpCost
-            LVL += 1
-            LblLVL.Text = LVL
-            LVLUpCostCalc()
-            UpdateLabels()
+    Private Sub BtnLVLUp_Click(sender As Object, e As EventArgs) Handles BtnLVLUp.Click 'Button to activate different functions and calculations for leveling up
+        If EXP >= LVLUpCost Then    'checks whether or not the player has enough EXP
+            EXP -= LVLUpCost        'starts the levelup process by lowering EXP by the cost of leveling
+            LVL += 1                'Increases the level.
+            LVLUpCostCalc()         'Calculates what the next level costs.
+            UpdateLabels()          'Updates all the labels visible to player.
         End If
     End Sub
 
-    Sub LVLUpCostCalc()
-        LVLUpCost = 1 + Math.Pow(LVL, 0.25 * LVL)
+    Sub LVLUpCostCalc()             'Calculates what the next level costs.
+        LVLUpCost = 1 + Math.Pow(LVL, 0.25 * LVL)   'sets the levelcost, based on the calculation: 1 + LVL^(0,25 * LVL)
     End Sub
 
-    Sub UpdateLabels()
+    Sub UpdateLabels()              'Updates the Labels by setting the text of them equal to the actual values.
         LblEXP.Text = EXP
         LblLVL.Text = LVL
         lblLVLCost.Text = LVLUpCost
     End Sub
 
+    ' I have no Idea past this point
+    ' I have no Idea past this point
+    ' I have no Idea past this point
+    ' I have no Idea past this point
+    ' I have no Idea past this point
 
     Sub Loop1()
         While AutoclickExp >= 1
