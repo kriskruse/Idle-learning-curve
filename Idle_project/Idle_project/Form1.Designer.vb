@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnMain = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -34,10 +34,12 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnDarkVision = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.LblDarkVisionLVL = New System.Windows.Forms.Label()
+        Me.LblDarkVisionEXP = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.LblDarkVisionCost = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnMain
@@ -143,7 +145,7 @@ Partial Class Form1
         '
         'BtnDarkVision
         '
-        Me.BtnDarkVision.Location = New System.Drawing.Point(712, 30)
+        Me.BtnDarkVision.Location = New System.Drawing.Point(714, 55)
         Me.BtnDarkVision.Name = "BtnDarkVision"
         Me.BtnDarkVision.Size = New System.Drawing.Size(75, 23)
         Me.BtnDarkVision.TabIndex = 10
@@ -154,21 +156,21 @@ Partial Class Form1
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(714, 56)
+        Me.Label5.Location = New System.Drawing.Point(715, 39)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(26, 13)
+        Me.Label5.Size = New System.Drawing.Size(59, 13)
         Me.Label5.TabIndex = 11
-        Me.Label5.Text = "LVL"
+        Me.Label5.Text = "Vision EXP"
         '
-        'LblDarkVisionLVL
+        'LblDarkVisionEXP
         '
-        Me.LblDarkVisionLVL.AutoSize = True
-        Me.LblDarkVisionLVL.ForeColor = System.Drawing.Color.White
-        Me.LblDarkVisionLVL.Location = New System.Drawing.Point(774, 56)
-        Me.LblDarkVisionLVL.Name = "LblDarkVisionLVL"
-        Me.LblDarkVisionLVL.Size = New System.Drawing.Size(13, 13)
-        Me.LblDarkVisionLVL.TabIndex = 12
-        Me.LblDarkVisionLVL.Text = "0"
+        Me.LblDarkVisionEXP.AutoSize = True
+        Me.LblDarkVisionEXP.ForeColor = System.Drawing.Color.White
+        Me.LblDarkVisionEXP.Location = New System.Drawing.Point(774, 39)
+        Me.LblDarkVisionEXP.Name = "LblDarkVisionEXP"
+        Me.LblDarkVisionEXP.Size = New System.Drawing.Size(13, 13)
+        Me.LblDarkVisionEXP.TabIndex = 12
+        Me.LblDarkVisionEXP.Text = "0"
         '
         'Button1
         '
@@ -197,16 +199,38 @@ Partial Class Form1
         Me.Button3.Text = "*TEMP* Story area"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(711, 26)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(61, 13)
+        Me.Label6.TabIndex = 16
+        Me.Label6.Text = " Vision cost"
+        '
+        'LblDarkVisionCost
+        '
+        Me.LblDarkVisionCost.AutoSize = True
+        Me.LblDarkVisionCost.ForeColor = System.Drawing.Color.White
+        Me.LblDarkVisionCost.Location = New System.Drawing.Point(774, 26)
+        Me.LblDarkVisionCost.Name = "LblDarkVisionCost"
+        Me.LblDarkVisionCost.Size = New System.Drawing.Size(13, 13)
+        Me.LblDarkVisionCost.TabIndex = 17
+        Me.LblDarkVisionCost.Text = "0"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(799, 531)
+        Me.Controls.Add(Me.LblDarkVisionCost)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.LblDarkVisionLVL)
+        Me.Controls.Add(Me.LblDarkVisionEXP)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.BtnDarkVision)
         Me.Controls.Add(Me.Label4)
@@ -239,8 +263,10 @@ Partial Class Form1
     Friend WithEvents Label4 As Label
     Friend WithEvents BtnDarkVision As Button
     Friend WithEvents Label5 As Label
-    Friend WithEvents LblDarkVisionLVL As Label
+    Friend WithEvents LblDarkVisionEXP As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents LblDarkVisionCost As Label
 End Class
