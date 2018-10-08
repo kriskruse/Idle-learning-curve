@@ -5,8 +5,8 @@
     Dim DarkVisionCost As Integer = 1   'Cost to level up the skill darkvision. (Might make this an overall skill EXP thing)
     Dim SkillPoints As Integer = 0      'Skill points, used to level up all skills.
     Dim LVLUpCost As Integer = 5        'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
-    Dim AutoClick1_cost As Double = 50 'Cost of autoclicker, going to be based on some mathemagics
-    Dim AutoClickExp As Double = 0
+    Dim AutoClick1_cost As Integer = 50 'Cost of autoclicker, going to be based on some mathemagics
+    Dim AutoclickExp = 0                'Unknown, Kris can probably explain what it's going to be used for
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -22,6 +22,8 @@
 
     Sub ClickF()                        'Calculates and adds the amount of EXP added per click
         '*FIXME* Find out how stats should have an effect on EXP gained.
+        '*FIXME* Find out what stats to be available.
+        '*POSSIBLE SOLUTION*: Resistance ^Damage reduction, Strength, Perception, Endurance ^^HP ^HP Regen, Charisma, Intelligence ^^Mana ^Mana Regen, Agility, Wisdom ^^Mana Regen ^Mana, Vitality ^^HP Regen ^HP.
         EXP += DarkVisionLVL + Math.Pow(LVL, 0.1 * LVL) 'the gotten EXP is based on this calculation: 1 + LVL^(0,1 * LVL)
         '*FIXME* Need to find out what makes players gain skill points.
         '*POSSIBLE SOLUTION*: could be based on pressing the levelup button, and in the future maybe kills. 
@@ -71,8 +73,8 @@
         If EXP >= AutoClick1_cost Then
             EXP -= AutoClick1_cost
             TimerAutoclick.Start()
-            AutoClickExp += 0.01
-            AutoClick1_cost += Math.Pow(AutoClickExp * 100.2, 1.2 * AutoClickExp * 10)
+            AutoclickExp += 0.01
+            AutoClick1_cost += Math.Pow(AutoclickExp * 100.2, 1.2 * AutoclickExp * 10)
         End If
     End Sub
 
