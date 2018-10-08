@@ -5,8 +5,8 @@
     Dim DarkVisionCost As Integer = 1   'Cost to level up the skill darkvision. (Might make this an overall skill EXP thing)
     Dim SkillPoints As Integer = 0      'Skill points, used to level up all skills.
     Dim LVLUpCost As Integer = 5        'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
-    Dim AutoClick1_cost As Integer = 50 'Cost of autoclicker, going to be based on some mathemagics
-    Dim AutoclickExp = 0                'Unknown, Kris can probably explain what it's going to be used for
+    Dim AutoClick1_cost As Double = 50  'Cost of autoclicker, going to be based on some mathemagics
+    Dim AutoclickExp As Double = 0      'Unknown, Kris can probably explain what it's going to be used for, "no i cant" -kris
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -15,7 +15,7 @@
         TimerAutoclick.Enabled = False
     End Sub
 
-    Private Sub BtnMain_Click(sender As Object, e As EventArgs) Handles btnMain.Click   'activates set functions when a button is clicked
+    Private Sub BtnMain_Click(sender As Object, e As EventArgs) Handles BtnMain.Click   'activates set functions when a button is clicked
         ClickF()
         UpdateLabels()
     End Sub
