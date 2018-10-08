@@ -8,6 +8,18 @@
     Dim AutoClick1_cost As Double = 50  'Cost of autoclicker, going to be based on some mathemagics
     Dim AutoclickExp As Double = 0      'Unknown, Kris can probably explain what it's going to be used for, "no i cant" -kris
 
+    'Under this point is the 8 stats the character can have
+    Dim StatAGI As Integer = 1
+    Dim StatEND As Integer = 1
+    Dim StatINT As Integer = 1
+    Dim StatPER As Integer = 1
+    Dim StatRES As Integer = 1
+    Dim StatSTR As Integer = 1
+    Dim StatVIT As Integer = 1
+    Dim StatWIS As Integer = 1
+    'Above this point is the 8 stats the character can have.
+
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LVLUpCostCalc()                 'calculates the cost of every levelup button at startup
@@ -49,12 +61,21 @@
         LblDarkVisionCost.Text = DarkVisionCost
         LblSkillPoints.Text = SkillPoints
         lblAutoClickcost.Text = Math.Round(AutoClick1_cost)
+        LblStatAGI.Text = StatAGI
+        LblStatEND.Text = StatEND
+        LblStatINT.Text = StatINT
+        LblStatPER.Text = StatPER
+        LblStatRES.Text = StatRES
+        LblStatSTR.Text = StatSTR
+        LblStatVIT.Text = StatVIT
+        LblStatWIS.Text = StatWIS
     End Sub
 
     Private Sub BtnDarkVision_Click(sender As Object, e As EventArgs) Handles BtnDarkVision.Click   'starts the level up procedure for darkvision skill.
         If SkillPoints >= DarkVisionCost Then
             DarkVisionLVL += 1
             SkillPoints -= DarkVisionCost
+            StatPER += 1
             LVLUpCostCalc()
             UpdateLabels()
         End If
