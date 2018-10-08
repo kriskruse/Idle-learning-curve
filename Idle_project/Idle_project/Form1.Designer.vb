@@ -22,7 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btnMain = New System.Windows.Forms.Button()
+        Me.BtnMain = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LblEXP = New System.Windows.Forms.Label()
@@ -42,15 +42,15 @@ Partial Class Form1
         Me.LblDarkVisionCost = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'btnMain
+        'BtnMain
         '
-        Me.btnMain.Location = New System.Drawing.Point(9, 10)
-        Me.btnMain.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnMain.Name = "btnMain"
-        Me.btnMain.Size = New System.Drawing.Size(251, 510)
-        Me.btnMain.TabIndex = 0
-        Me.btnMain.Text = "CLICK ME TO GRIND FOR EXP"
-        Me.btnMain.UseVisualStyleBackColor = True
+        Me.BtnMain.Location = New System.Drawing.Point(9, 10)
+        Me.BtnMain.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnMain.Name = "BtnMain"
+        Me.BtnMain.Size = New System.Drawing.Size(251, 510)
+        Me.BtnMain.TabIndex = 0
+        Me.BtnMain.Text = "CLICK ME TO GRIND FOR EXP"
+        Me.BtnMain.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -242,7 +242,7 @@ Partial Class Form1
         Me.Controls.Add(Me.LblEXP)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnMain)
+        Me.Controls.Add(Me.BtnMain)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form1"
         Me.Text = "You find yourself in a dark cave"
@@ -251,7 +251,7 @@ Partial Class Form1
 
     End Sub
 
-    Friend WithEvents btnMain As Button
+    Friend WithEvents BtnMain As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents LblEXP As Label

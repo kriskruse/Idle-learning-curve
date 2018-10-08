@@ -13,12 +13,12 @@
         UpdateLabels()                  'updates every label on startup.
     End Sub
 
-    Private Sub btnMain_Click(sender As Object, e As EventArgs) Handles btnMain.Click   'activates set functions when a button is clicked
-        clickF()
+    Private Sub BtnMain_Click(sender As Object, e As EventArgs) Handles BtnMain.Click   'activates set functions when a button is clicked
+        ClickF()
         UpdateLabels()
     End Sub
 
-    Sub clickF()                        'Calculates and adds the amount of EXP added per click
+    Sub ClickF()                        'Calculates and adds the amount of EXP added per click
         '*FIXME* Find out how stats should have an effect on EXP gained.
         EXP += DarkVisionLVL + Math.Pow(LVL, 0.1 * LVL) 'the gotten EXP is based on this calculation: 1 + LVL^(0,1 * LVL)
         '*FIXME* Need to find out what makes players gain skill points.
