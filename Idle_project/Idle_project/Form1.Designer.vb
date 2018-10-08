@@ -145,7 +145,7 @@ Partial Class Form1
         '
         'BtnDarkVision
         '
-        Me.BtnDarkVision.Location = New System.Drawing.Point(714, 55)
+        Me.BtnDarkVision.Location = New System.Drawing.Point(714, 42)
         Me.BtnDarkVision.Name = "BtnDarkVision"
         Me.BtnDarkVision.Size = New System.Drawing.Size(75, 23)
         Me.BtnDarkVision.TabIndex = 10
@@ -156,7 +156,7 @@ Partial Class Form1
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(515, 10)
+        Me.Label5.Location = New System.Drawing.Point(486, 10)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(58, 13)
         Me.Label5.TabIndex = 11
@@ -166,7 +166,7 @@ Partial Class Form1
         '
         Me.LblSkillPoints.AutoSize = True
         Me.LblSkillPoints.ForeColor = System.Drawing.Color.White
-        Me.LblSkillPoints.Location = New System.Drawing.Point(574, 10)
+        Me.LblSkillPoints.Location = New System.Drawing.Point(545, 10)
         Me.LblSkillPoints.Name = "LblSkillPoints"
         Me.LblSkillPoints.Size = New System.Drawing.Size(13, 13)
         Me.LblSkillPoints.TabIndex = 12

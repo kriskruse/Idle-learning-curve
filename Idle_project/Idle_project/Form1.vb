@@ -19,10 +19,11 @@
     End Sub
 
     Sub clickF()                        'Calculates and adds the amount of EXP added per click
+        '*FIXME* Find out how stats should have an effect on EXP gained.
         EXP += DarkVisionLVL + Math.Pow(LVL, 0.1 * LVL) 'the gotten EXP is based on this calculation: 1 + LVL^(0,1 * LVL)
         '*FIXME* Need to find out what makes players gain skill points.
         '*POSSIBLE SOLUTION*: could be based on pressing the levelup button, and in the future maybe kills. 
-        'SkillPoints += Math.Pow(DarkVisionLVL, 0.05 * DarkVisionLVL)
+        SkillPoints += Math.Pow(DarkVisionLVL, 0.05 * DarkVisionLVL)
     End Sub
 
     Private Sub BtnLVLUp_Click(sender As Object, e As EventArgs) Handles BtnLVLUp.Click 'Button to activate different functions and calculations for leveling up
