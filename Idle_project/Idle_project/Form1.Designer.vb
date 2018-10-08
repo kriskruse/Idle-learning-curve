@@ -34,7 +34,7 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnDarkVision = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.LblDarkVisionEXP = New System.Windows.Forms.Label()
+        Me.LblSkillPoints = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -156,21 +156,21 @@ Partial Class Form1
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(715, 39)
+        Me.Label5.Location = New System.Drawing.Point(515, 10)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(59, 13)
+        Me.Label5.Size = New System.Drawing.Size(58, 13)
         Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Vision EXP"
+        Me.Label5.Text = "Skill Points"
         '
-        'LblDarkVisionEXP
+        'LblSkillPoints
         '
-        Me.LblDarkVisionEXP.AutoSize = True
-        Me.LblDarkVisionEXP.ForeColor = System.Drawing.Color.White
-        Me.LblDarkVisionEXP.Location = New System.Drawing.Point(774, 39)
-        Me.LblDarkVisionEXP.Name = "LblDarkVisionEXP"
-        Me.LblDarkVisionEXP.Size = New System.Drawing.Size(13, 13)
-        Me.LblDarkVisionEXP.TabIndex = 12
-        Me.LblDarkVisionEXP.Text = "0"
+        Me.LblSkillPoints.AutoSize = True
+        Me.LblSkillPoints.ForeColor = System.Drawing.Color.White
+        Me.LblSkillPoints.Location = New System.Drawing.Point(574, 10)
+        Me.LblSkillPoints.Name = "LblSkillPoints"
+        Me.LblSkillPoints.Size = New System.Drawing.Size(13, 13)
+        Me.LblSkillPoints.TabIndex = 12
+        Me.LblSkillPoints.Text = "0"
         '
         'Button1
         '
@@ -230,7 +230,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.LblDarkVisionEXP)
+        Me.Controls.Add(Me.LblSkillPoints)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.BtnDarkVision)
         Me.Controls.Add(Me.Label4)
@@ -263,7 +263,7 @@ Partial Class Form1
     Friend WithEvents Label4 As Label
     Friend WithEvents BtnDarkVision As Button
     Friend WithEvents Label5 As Label
-    Friend WithEvents LblDarkVisionEXP As Label
+    Friend WithEvents LblSkillPoints As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button

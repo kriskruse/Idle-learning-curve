@@ -3,7 +3,7 @@
     Dim LVL As Integer = 1              'Levels, used to increase amount of experience gained per click/autoclick
     Dim DarkVisionLVL As Integer = 0    'Levels in skill: Darkvision, Used to increase EXP gained and to unlock next part of the story.
     Dim DarkVisionCost As Integer = 1   'Cost to level up the skill darkvision. (Might make this an overall skill EXP thing)
-    Dim DarkVisionEXP As Integer = 0    'Experience used to level up Dark Vision skill.
+    Dim SkillPoints As Integer = 0      'Skill points, used to level up all skills.
     Dim LVLUpCost As Integer = 5        'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
     Dim AutoClick1_cost As Integer = 50 'Cost of autoclicker, going to be based on some mathemagics
     Dim AutoclickExp = 0                'Unknown, Kris can probably explain what it's going to be used for
@@ -20,7 +20,9 @@
 
     Sub clickF()                        'Calculates and adds the amount of EXP added per click
         EXP += DarkVisionLVL + Math.Pow(LVL, 0.1 * LVL) 'the gotten EXP is based on this calculation: 1 + LVL^(0,1 * LVL)
-        DarkVisionEXP += Math.Pow(DarkVisionLVL, 0.05 * DarkVisionLVL)
+        '*FIXME* Need to find out what makes players gain skill points.
+        '*POSSIBLE SOLUTION*: could be based on pressing the levelup button, and in the future maybe kills. 
+        'SkillPoints += Math.Pow(DarkVisionLVL, 0.05 * DarkVisionLVL)
     End Sub
 
     Private Sub BtnLVLUp_Click(sender As Object, e As EventArgs) Handles BtnLVLUp.Click 'Button to activate different functions and calculations for leveling up
@@ -42,13 +44,13 @@
         LblLVL.Text = LVL
         lblLVLCost.Text = LVLUpCost
         LblDarkVisionCost.Text = DarkVisionCost
-        LblDarkVisionEXP.Text = DarkVisionEXP
+        LblSkillPoints.Text = SkillPoints
     End Sub
 
     Private Sub BtnDarkVision_Click(sender As Object, e As EventArgs) Handles BtnDarkVision.Click   'starts the level up procedure for darkvision skill.
-        If DarkVisionEXP >= DarkVisionCost Then
+        If SkillPoints >= DarkVisionCost Then
             DarkVisionLVL += 1
-            DarkVisionEXP -= DarkVisionCost
+            SkillPoints -= DarkVisionCost
             LVLUpCostCalc()
             UpdateLabels()
         End If
