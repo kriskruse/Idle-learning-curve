@@ -40,6 +40,7 @@ Partial Class Form1
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.LblDarkVisionCost = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BtnMain
@@ -47,7 +48,7 @@ Partial Class Form1
         Me.BtnMain.Location = New System.Drawing.Point(9, 10)
         Me.BtnMain.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnMain.Name = "BtnMain"
-        Me.BtnMain.Size = New System.Drawing.Size(251, 510)
+        Me.BtnMain.Size = New System.Drawing.Size(251, 449)
         Me.BtnMain.TabIndex = 0
         Me.BtnMain.Text = "CLICK ME TO GRIND FOR EXP"
         Me.BtnMain.UseVisualStyleBackColor = True
@@ -94,7 +95,7 @@ Partial Class Form1
         '
         'BtnLVLUp
         '
-        Me.BtnLVLUp.Location = New System.Drawing.Point(265, 365)
+        Me.BtnLVLUp.Location = New System.Drawing.Point(264, 365)
         Me.BtnLVLUp.Name = "BtnLVLUp"
         Me.BtnLVLUp.Size = New System.Drawing.Size(143, 57)
         Me.BtnLVLUp.TabIndex = 5
@@ -183,9 +184,9 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(414, 336)
+        Me.Button2.Location = New System.Drawing.Point(413, 336)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(294, 184)
+        Me.Button2.Size = New System.Drawing.Size(295, 184)
         Me.Button2.TabIndex = 14
         Me.Button2.Text = "*TEMP* STAT OVERLAY"
         Me.Button2.UseVisualStyleBackColor = True
@@ -219,12 +220,23 @@ Partial Class Form1
         Me.LblDarkVisionCost.TabIndex = 17
         Me.LblDarkVisionCost.Text = "0"
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(9, 463)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(251, 57)
+        Me.Button4.TabIndex = 18
+        Me.Button4.Text = "*TEMP* Rebirth"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(799, 531)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.LblDarkVisionCost)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Button3)
@@ -269,4 +281,5 @@ Partial Class Form1
     Friend WithEvents Button3 As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents LblDarkVisionCost As Label
+    Friend WithEvents Button4 As Button
 End Class
