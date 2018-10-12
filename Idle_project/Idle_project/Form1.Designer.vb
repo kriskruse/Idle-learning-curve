@@ -59,12 +59,16 @@ Partial Class Form1
         Me.LblStatAGI = New System.Windows.Forms.Label()
         Me.LblStatVIT = New System.Windows.Forms.Label()
         Me.LblStatWIS = New System.Windows.Forms.Label()
+        Me.LblMobName = New System.Windows.Forms.Label()
+        Me.test1 = New System.Windows.Forms.Label()
+        Me.test2 = New System.Windows.Forms.Label()
+        Me.test3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'BtnMain
         '
         Me.BtnMain.Location = New System.Drawing.Point(9, 10)
-        Me.BtnMain.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnMain.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnMain.Name = "BtnMain"
         Me.BtnMain.Size = New System.Drawing.Size(251, 449)
         Me.BtnMain.TabIndex = 0
@@ -143,7 +147,7 @@ Partial Class Form1
         'AutoClickBuy
         '
         Me.AutoClickBuy.Location = New System.Drawing.Point(264, 463)
-        Me.AutoClickBuy.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.AutoClickBuy.Margin = New System.Windows.Forms.Padding(2)
         Me.AutoClickBuy.Name = "AutoClickBuy"
         Me.AutoClickBuy.Size = New System.Drawing.Size(144, 57)
         Me.AutoClickBuy.TabIndex = 8
@@ -232,7 +236,7 @@ Partial Class Form1
         'Button4
         '
         Me.Button4.Location = New System.Drawing.Point(9, 463)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(2)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(251, 57)
         Me.Button4.TabIndex = 18
@@ -414,12 +418,56 @@ Partial Class Form1
         Me.LblStatWIS.TabIndex = 36
         Me.LblStatWIS.Text = "0"
         '
+        'LblMobName
+        '
+        Me.LblMobName.AutoSize = True
+        Me.LblMobName.ForeColor = System.Drawing.Color.White
+        Me.LblMobName.Location = New System.Drawing.Point(673, 449)
+        Me.LblMobName.Name = "LblMobName"
+        Me.LblMobName.Size = New System.Drawing.Size(13, 13)
+        Me.LblMobName.TabIndex = 37
+        Me.LblMobName.Text = "0"
+        '
+        'test1
+        '
+        Me.test1.AutoSize = True
+        Me.test1.ForeColor = System.Drawing.Color.White
+        Me.test1.Location = New System.Drawing.Point(640, 466)
+        Me.test1.Name = "test1"
+        Me.test1.Size = New System.Drawing.Size(45, 13)
+        Me.test1.TabIndex = 38
+        Me.test1.Text = "Label11"
+        '
+        'test2
+        '
+        Me.test2.AutoSize = True
+        Me.test2.ForeColor = System.Drawing.Color.White
+        Me.test2.Location = New System.Drawing.Point(676, 492)
+        Me.test2.Name = "test2"
+        Me.test2.Size = New System.Drawing.Size(45, 13)
+        Me.test2.TabIndex = 39
+        Me.test2.Text = "Label16"
+        '
+        'test3
+        '
+        Me.test3.AutoSize = True
+        Me.test3.ForeColor = System.Drawing.Color.White
+        Me.test3.Location = New System.Drawing.Point(640, 415)
+        Me.test3.Name = "test3"
+        Me.test3.Size = New System.Drawing.Size(45, 13)
+        Me.test3.TabIndex = 40
+        Me.test3.Text = "Label11"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(799, 531)
+        Me.Controls.Add(Me.test3)
+        Me.Controls.Add(Me.test2)
+        Me.Controls.Add(Me.test1)
+        Me.Controls.Add(Me.LblMobName)
         Me.Controls.Add(Me.LblStatWIS)
         Me.Controls.Add(Me.LblStatVIT)
         Me.Controls.Add(Me.LblStatAGI)
@@ -455,7 +503,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnMain)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form1"
         Me.Text = "You find yourself in a dark cave"
         Me.ResumeLayout(False)
@@ -499,4 +547,8 @@ Partial Class Form1
     Friend WithEvents LblStatAGI As Label
     Friend WithEvents LblStatVIT As Label
     Friend WithEvents LblStatWIS As Label
+    Friend WithEvents LblMobName As Label
+    Friend WithEvents test1 As Label
+    Friend WithEvents test2 As Label
+    Friend WithEvents test3 As Label
 End Class
