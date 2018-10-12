@@ -7,6 +7,19 @@
     Dim LVLUpCost As ULong = 5        'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
     Dim AutoClick1_cost As Double = 50  'Cost of autoclicker, going to be based on some mathemagics
     Dim AutoclickExp As Double = 0      'Unknown, Kris can probably explain what it's going to be used for, "no i cant" -kris
+    Dim KillAmount As Integer = 0
+
+    'Under this point is the 8 stats the character can have
+    Dim StatAGI As Integer = 1
+    Dim StatEND As Integer = 1
+    Dim StatINT As Integer = 1
+    Dim StatPER As Integer = 1
+    Dim StatRES As Integer = 1
+    Dim StatSTR As Integer = 1
+    Dim StatVIT As Integer = 1
+    Dim StatWIS As Integer = 1
+    'Above this point is the 8 stats the character can have.
+
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -21,19 +34,15 @@
     End Sub
 
     Sub ClickF()                        'Calculates and adds the amount of EXP added per click
-        '*FIXME* Find out how stats should have an effect on EXP gained.
-        '*FIXME* Find out what stats to be available.
-        '*POSSIBLE SOLUTION*: Resistance ^Damage reduction, Strength, Perception, Endurance ^^HP ^HP Regen, Charisma, Intelligence ^^Mana ^Mana Regen, Agility, Wisdom ^^Mana Regen ^Mana, Vitality ^^HP Regen ^HP.
-        EXP += DarkVisionLVL + Math.Pow(LVL, 0.1 * LVL) 'the gotten EXP is based on this calculation: 1 + LVL^(0,1 * LVL)
-        '*FIXME* Need to find out what makes players gain skill points.
-        '*POSSIBLE SOLUTION*: could be based on pressing the levelup button, and in the future maybe kills. 
-        SkillPoints += Math.Pow(DarkVisionLVL, 0.05 * DarkVisionLVL)
+        '*FIXME* Find out how stats and kills should have an effect on EXP gained.
+        EXP += LVL + Math.Pow(StatPER, (0.1 * StatPER) + (0.0001 * KillAmount)) 'the gotten EXP is based on this calculation: 1 + LVL^(0,1 * LVL)
     End Sub
 
     Private Sub BtnLVLUp_Click(sender As Object, e As EventArgs) Handles BtnLVLUp.Click 'Button to activate different functions and calculations for leveling up
         If EXP >= LVLUpCost Then        'checks whether or not the player has enough EXP
             EXP -= LVLUpCost            'starts the levelup process by lowering EXP by the cost of leveling
             LVL += 1                    'Increases the level.
+            SkillPoints += Math.Pow(2, 0.05 * LVL) 'Increases amount of skillpoints
             LVLUpCostCalc()             'Calculates what the next level costs.
             UpdateLabels()              'Updates all the labels visible to player.
         End If
@@ -51,16 +60,27 @@
         LblDarkVisionCost.Text = DarkVisionCost
         LblSkillPoints.Text = SkillPoints
         lblAutoClickcost.Text = Math.Round(AutoClick1_cost)
+        LblStatAGI.Text = StatAGI
+        LblStatEND.Text = StatEND
+        LblStatINT.Text = StatINT
+        LblStatPER.Text = StatPER
+        LblStatRES.Text = StatRES
+        LblStatSTR.Text = StatSTR
+        LblStatVIT.Text = StatVIT
+        LblStatWIS.Text = StatWIS
     End Sub
 
     Private Sub BtnDarkVision_Click(sender As Object, e As EventArgs) Handles BtnDarkVision.Click   'starts the level up procedure for darkvision skill.
         If SkillPoints >= DarkVisionCost Then
             DarkVisionLVL += 1
             SkillPoints -= DarkVisionCost
+            StatPER += 1
             LVLUpCostCalc()
             UpdateLabels()
         End If
     End Sub
+
+
 
     ' I have no Idea past this point
     ' I have no Idea past this point
@@ -81,5 +101,9 @@
     Private Sub TimerAutoclick_Tick(sender As Object, e As EventArgs) Handles TimerAutoclick.Tick
         EXP += AutoclickExp
         UpdateLabels()
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
     End Sub
 End Class
