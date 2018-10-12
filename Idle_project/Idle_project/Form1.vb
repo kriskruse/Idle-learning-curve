@@ -7,25 +7,25 @@
     Dim LVLUpCost As Integer = 5        'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
     Dim AutoClick1_cost As Double = 50  'Cost of autoclicker, going to be based on some mathemagics
     Dim AutoclickExp As Double = 0      'Unknown, Kris can probably explain what it's going to be used for, "no i cant" -kris
-    Dim KillAmount As Integer = 0
+    Dim KillAmount As Integer = 0       'Amount of Monsters killed
 
     'Under this point is the 8 stats the character can have
-    Dim StatAGI As Integer = 1
-    Dim StatEND As Integer = 1
-    Dim StatINT As Integer = 1
-    Dim StatPER As Integer = 1
-    Dim StatRES As Integer = 1
-    Dim StatSTR As Integer = 1
-    Dim StatVIT As Integer = 1
-    Dim StatWIS As Integer = 1
+    Dim StatAGI As Integer = 1          'Agility, increases dodge chance.
+    Dim StatEND As Integer = 1          'Endurance, Increases health a lot and HP regen a little.
+    Dim StatINT As Integer = 1          'Intelligence, Increases Mana a lot and Mana Regen a little
+    Dim StatPER As Integer = 1          'Perception, Increases EXP gotten and chance of critical hits
+    Dim StatRES As Integer = 1          'Resistance, increases damage reduction
+    Dim StatSTR As Integer = 1          'Strength, increases base damage
+    Dim StatVIT As Integer = 1          'Vitality, increases HP regen a lot and health a little
+    Dim StatWIS As Integer = 1          'Wisdom, increases mana regen a lot and mana a little
     'Above this point is the 8 stats the character can have.
 
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LVLUpCostCalc()                 'calculates the cost of every levelup button at startup
+        LVLUpCostCalc()                 'calculates the cost of every levelup button at startup.
         UpdateLabels()                  'updates every label on startup.
-        TimerAutoclick.Enabled = False
+        TimerAutoclick.Enabled = False  'stops the timer on startup.
     End Sub
 
     Private Sub BtnMain_Click(sender As Object, e As EventArgs) Handles BtnMain.Click   'activates set functions when a button is clicked
