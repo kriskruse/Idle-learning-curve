@@ -7,6 +7,7 @@
     Dim LVLUpCost As Integer = 5        'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
     Dim AutoClick1_cost As Double = 50  'Cost of autoclicker, going to be based on some mathemagics
     Dim AutoclickExp As Double = 0      'Unknown, Kris can probably explain what it's going to be used for, "no i cant" -kris
+    Dim KillAmount As Integer = 0
 
     'Under this point is the 8 stats the character can have
     Dim StatAGI As Integer = 1
@@ -33,17 +34,15 @@
     End Sub
 
     Sub ClickF()                        'Calculates and adds the amount of EXP added per click
-        '*FIXME* Find out how stats should have an effect on EXP gained.
-        EXP += DarkVisionLVL + Math.Pow(LVL, 0.1 * LVL) 'the gotten EXP is based on this calculation: 1 + LVL^(0,1 * LVL)
-        '*FIXME* Need to find out what makes players gain skill points.
-        '*POSSIBLE SOLUTION*: could be based on pressing the levelup button, and in the future maybe kills. 
-        SkillPoints += Math.Pow(DarkVisionLVL, 0.05 * DarkVisionLVL)
+        '*FIXME* Find out how stats and kills should have an effect on EXP gained.
+        EXP += LVL + Math.Pow(StatPER, (0.1 * StatPER) + (0.0001 * KillAmount)) 'the gotten EXP is based on this calculation: 1 + LVL^(0,1 * LVL)
     End Sub
 
     Private Sub BtnLVLUp_Click(sender As Object, e As EventArgs) Handles BtnLVLUp.Click 'Button to activate different functions and calculations for leveling up
         If EXP >= LVLUpCost Then        'checks whether or not the player has enough EXP
             EXP -= LVLUpCost            'starts the levelup process by lowering EXP by the cost of leveling
             LVL += 1                    'Increases the level.
+            SkillPoints += Math.Pow(2, 0.05 * LVL) 'Increases amount of skillpoints
             LVLUpCostCalc()             'Calculates what the next level costs.
             UpdateLabels()              'Updates all the labels visible to player.
         End If
@@ -81,6 +80,8 @@
         End If
     End Sub
 
+
+
     ' I have no Idea past this point
     ' I have no Idea past this point
     ' I have no Idea past this point
@@ -100,5 +101,9 @@
     Private Sub TimerAutoclick_Tick(sender As Object, e As EventArgs) Handles TimerAutoclick.Tick
         EXP += AutoclickExp
         UpdateLabels()
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
     End Sub
 End Class
