@@ -7,6 +7,7 @@
     Dim LVLUpCost As ULong = 5        'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
     Dim AutoClick1_cost As Double = 50  'Cost of autoclicker, going to be based on some mathemagics
     Dim AutoclickExp As Double = 0      'Unknown, Kris can probably explain what it's going to be used for, "no i cant" -kris
+    Dim AutoClickLVL As ULong = 0
     Dim KillAmount As Integer = 0
 
     'Under this point is the 8 stats the character can have
@@ -95,6 +96,8 @@
             TimerAutoclick.Start()
             AutoclickExp += 0.01
             AutoClick1_cost += Math.Pow(AutoclickExp * 100.2, 1.2 * AutoclickExp * 10)
+            AutoClickLVL += 1
+            lblAutoLVL.Text = AutoClickLVL
         End If
     End Sub
 
@@ -103,7 +106,5 @@
         UpdateLabels()
     End Sub
 
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
 
-    End Sub
 End Class
