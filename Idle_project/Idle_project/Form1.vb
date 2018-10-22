@@ -1,13 +1,13 @@
 ﻿Public Class Form1
     Dim EXP As Double = 0              'experience, used as currency for leveling up, modifiers for EXP gained include: perception, monsters and (special bonus for endgame)
-    Dim LVL As ULong = 1               'Levels, used to increase amount of experience gained per click/autoclick
-    Dim DarkVisionLVL As ULong = 0     'Levels in skill: Darkvision, Used to increase EXP gained and to unlock next part of the story.
-    Dim DarkVisionCost As ULong = 1    'Cost to level up the skill darkvision. (Might make this an overall skill EXP thing)
-    Dim SkillPoints As ULong = 0       'Skill points, used to level up all skills.
-    Dim LVLUpCost As ULong = 5         'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
+    Dim LVL As ULong = 1              'Levels, used to increase amount of experience gained per click/autoclick
+    Dim DarkVisionLVL As ULong = 0    'Levels in skill: Darkvision, Used to increase EXP gained and to unlock next part of the story.
+    Dim DarkVisionCost As ULong = 1   'Cost to level up the skill darkvision. (Might make this an overall skill EXP thing)
+    Dim SkillPoints As ULong = 0      'Skill points, used to level up all skills.
+    Dim LVLUpCost As ULong = 5        'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
     Dim AutoClick1_cost As Double = 50  'Cost of autoclicker, going to be based on some mathemagics
-    Dim AutoclickExp As Double = 0      'Amount of EXP Autoclicker gives every tick
-    Dim AutoClickLVL As ULong = 0       'Counter for times the Autoclicker has been purchased/upgraded
+    Dim AutoclickExp As Double = 0      'Unknown, Kris can probably explain what it's going to be used for, "no i cant" -kris
+    Dim AutoClickLVL As ULong = 0
     Dim KillAmount As Integer = 0
 
     'Under this point is the 8 stats the character can have
@@ -132,7 +132,6 @@
         End If
     End Sub
 
-    'This is the timer that runs the Autoclicker, set to tick every 1ms for smoothiness
     Private Sub TimerAutoclick_Tick(sender As Object, e As EventArgs) Handles TimerAutoclick.Tick
         EXP += AutoclickExp
         UpdateLabels()

@@ -564,13 +564,6 @@ Partial Class Form1
     Friend WithEvents LblStatAGI As Label
     Friend WithEvents LblStatVIT As Label
     Friend WithEvents LblStatWIS As Label
-<<<<<<< HEAD
-    Friend WithEvents LblMobName As Label
-    Friend WithEvents test1 As Label
-    Friend WithEvents test2 As Label
-    Friend WithEvents test3 As Label
-    Friend WithEvents LblAutoLVL As Label
-=======
     Friend WithEvents Label11 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents lblAutoLVL As Label
