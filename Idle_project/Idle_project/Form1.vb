@@ -9,6 +9,7 @@
     Dim AutoclickExp As Double = 0      'Amount of EXP given per Autoclick tick
     Dim AutoClickLVL As ULong = 0       'The level shown to the player, reffers to the amount of times the autoclicker has been upgraded
     Dim KillAmount As Integer = 0
+    Dim y As Double = 0
 
     'Under this point is the 8 stats the character can have
     Dim StatAGI As Integer = 1          'Agility, increases dodge chance.
@@ -81,13 +82,25 @@
         End If
     End Sub
 
+    'Calculates the cost of many things like the autoclicker and click upgrades.
+    Private Function CostCal(x, c, v)
+        If c & v = 0 Then
+            y = Math.Pow(x * 100.2, 1.2 * x * 10)
+        ElseIf v = 0 And c > 0 Then
+            y = Math.Pow(x * 100.2, 1.2 * c * 10)
+        Else
+            y = Math.Pow(x * 100.2, 1.2 * c * 10 * v)
+        End If
+        Return y
+    End Function
+
     'Autoclclicker 
     Private Sub AutoClickBuy_Click(sender As Object, e As EventArgs) Handles AutoClickBuy.Click
         If EXP >= AutoClick1_cost Then 'Matches prize and currency amount
             EXP -= AutoClick1_cost      'Removes the cost from the current currency amount
             TimerAutoclick.Start()      'Starts the Timer/Clock that activates the clicks
             AutoclickExp += 0.01        'EXP gain per click, updates per lvl
-            AutoClick1_cost += Math.Pow(AutoclickExp * 100.2, 1.2 * AutoclickExp * 10) 'New cost calculations
+            AutoClick1_cost = CostCal(AutoclickExp, 0, 0)
             AutoClickLVL += 1           'Level shown to player
             lblAutoLVL.Text = AutoClickLVL  'Updates Label 
         End If
