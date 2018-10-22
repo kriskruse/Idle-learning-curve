@@ -7,19 +7,25 @@
     Dim LVLUpCost As ULong = 5        'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
     Dim AutoClick1_cost As Double = 50  'Cost of autoclicker, going to be based on some mathemagics
     Dim AutoclickExp As Double = 0      'Unknown, Kris can probably explain what it's going to be used for, "no i cant" -kris
+    Dim KillAmount As ULong = 0       'Amount of Monsters killed
     Dim AutoClickLVL As ULong = 0
-    Dim KillAmount As Integer = 0
 
     'Under this point is the 8 stats the character can have
-    Dim StatAGI As Integer = 1          'Agility, increases dodge chance.
-    Dim StatEND As Integer = 1          'Endurance, Increases health a lot and HP regen a little.
-    Dim StatINT As Integer = 1          'Intelligence, Increases Mana a lot and Mana Regen a little
-    Dim StatPER As Integer = 1          'Perception, Increases EXP gotten and chance of critical hits
-    Dim StatRES As Integer = 1          'Resistance, increases damage reduction
-    Dim StatSTR As Integer = 1          'Strength, increases base damage
-    Dim StatVIT As Integer = 1          'Vitality, increases HP regen a lot and health a little
-    Dim StatWIS As Integer = 1          'Wisdom, increases mana regen a lot and mana a little
+    Dim StatAGI As ULong = 1          'Agility, increases dodge chance.
+    Dim StatEND As ULong = 1          'Endurance, Increases health a lot and HP regen a little.
+    Dim StatINT As ULong = 1          'Intelligence, Increases Mana a lot and Mana Regen a little
+    Dim StatPER As ULong = 1          'Perception, Increases EXP gotten and chance of critical hits
+    Dim StatRES As ULong = 1          'Resistance, increases damage reduction
+    Dim StatSTR As ULong = 1          'Strength, increases base damage
+    Dim StatVIT As ULong = 1          'Vitality, increases HP regen a lot and health a little
+    Dim StatWIS As ULong = 1          'Wisdom, increases mana regen a lot and mana a little
     'Above this point is the 8 stats the character can have.
+
+    'Below this point is all stats a monster can have
+    Dim MobHealth As Double = 0
+    Dim MobDmg As Double = 0
+    Dim MobName As String = "test"
+    'Above this point is all stats a monster can have
 
 
 
@@ -37,6 +43,7 @@
     Sub ClickF()                        'Calculates and adds the amount of EXP added per click
         '*FIXME* Find out how stats and kills should have an effect on EXP gained.
         EXP += LVL + Math.Pow(StatPER, (0.1 * StatPER) + (0.0001 * KillAmount)) 'the gotten EXP is based on this calculation: 1 + LVL^(0,1 * LVL)
+        StartFight()
     End Sub
 
     Private Sub BtnLVLUp_Click(sender As Object, e As EventArgs) Handles BtnLVLUp.Click 'Button to activate different functions and calculations for leveling up
@@ -61,6 +68,7 @@
         LblDarkVisionCost.Text = DarkVisionCost
         LblSkillPoints.Text = SkillPoints
         lblAutoClickcost.Text = Math.Round(AutoClick1_cost)
+        LblMobName.Text = MobName
         LblStatAGI.Text = StatAGI
         LblStatEND.Text = StatEND
         LblStatINT.Text = StatINT
@@ -81,7 +89,30 @@
         End If
     End Sub
 
-
+    Sub StartFight()
+        MobHealth = Rnd() * 360
+        MobDmg = Rnd() * 360
+        test3.Text = "Blin"
+        test1.Text = MobHealth
+        test2.Text = MobDmg
+        '*FIXME* Find a way to change name of Mob depending on stats
+        '*POSSIBLE SOLUTION* [ENTER POSSIBLE SOLUTION HERE]
+        'Select Case MobHealth And MobDmg
+        'Case MobHealth < 100 & MobHealth > MobDmg
+        'LblMobName.Text = "Enduring Rat"
+        'Case MobHealth < 100 & MobHealth < MobDmg
+        'LblMobName.Text = "Strong Rat"
+        'Case MobHealth > 100 & MobHealth <= 200 & MobDmg > MobHealth
+        'LblMobName.Text = "Strong Slime"
+        'Case MobHealth > 100 & MobHealth <= 200 & MobHealth > MobDmg
+        'LblMobName.Text = "Enduring Slime"
+        'Case MobHealth > 200 & MobHealth > MobDmg
+        'LblMobName.Text = "Enduring Kobold"
+        'Case MobHealth > 200 & MobDmg > MobHealth
+        'LblMobName.Text = "Strong Kobold"
+        'End Select
+        UpdateLabels()
+    End Sub
 
     ' I have no Idea past this point
     ' I have no Idea past this point
