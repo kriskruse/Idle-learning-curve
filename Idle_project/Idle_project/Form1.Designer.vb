@@ -63,6 +63,7 @@ Partial Class Form1
         Me.test1 = New System.Windows.Forms.Label()
         Me.test2 = New System.Windows.Forms.Label()
         Me.test3 = New System.Windows.Forms.Label()
+        Me.LblAutoLVL = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'BtnMain
@@ -462,12 +463,24 @@ Partial Class Form1
         Me.test3.TabIndex = 40
         Me.test3.Text = "Label11"
         '
+        'LblAutoLVL
+        '
+        Me.LblAutoLVL.AutoSize = True
+        Me.LblAutoLVL.ForeColor = System.Drawing.Color.White
+        Me.LblAutoLVL.Location = New System.Drawing.Point(339, 444)
+        Me.LblAutoLVL.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblAutoLVL.Name = "LblAutoLVL"
+        Me.LblAutoLVL.Size = New System.Drawing.Size(13, 13)
+        Me.LblAutoLVL.TabIndex = 41
+        Me.LblAutoLVL.Text = "0"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(795, 522)
+        Me.Controls.Add(Me.LblAutoLVL)
         Me.Controls.Add(Me.test3)
         Me.Controls.Add(Me.test2)
         Me.Controls.Add(Me.test1)
@@ -556,6 +569,7 @@ Partial Class Form1
     Friend WithEvents test1 As Label
     Friend WithEvents test2 As Label
     Friend WithEvents test3 As Label
+    Friend WithEvents LblAutoLVL As Label
 =======
     Friend WithEvents Label11 As Label
     Friend WithEvents Label16 As Label
