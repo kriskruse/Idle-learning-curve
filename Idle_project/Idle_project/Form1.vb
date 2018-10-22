@@ -21,6 +21,10 @@
     Dim StatWIS As Integer = 1          'Wisdom, increases mana regen a lot and mana a little
     'Above this point is the 8 stats the character can have.
 
+    'Mob Stats
+    Dim MobHealth As Double = 0
+    Dim MobDamage As Double = 0
+
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -79,6 +83,46 @@
             LVLUpCostCalc()
             UpdateLabels()
         End If
+    End Sub
+
+    Sub StartFight()
+
+    End Sub
+
+    'Mob handling
+    Public Sub Mobs()
+        Dim MobName(2) As String
+        Dim MobModifier(2) As String
+
+        'assigning values to each element
+
+        MobModifier(0) = "Healthy"
+        MobModifier(1) = "Tough"
+        MobModifier(2) = "Average"
+
+        MobName(0) = "Slime"
+        MobName(1) = "Rat"
+        MobName(2) = "Kobold"
+
+        Select Case MobDamage
+            Case Is > MobHealth
+                LblMobMod.Text = MobModifier(1)
+            Case Is < MobHealth
+                LblMobMod.Text = MobModifier(2)
+            Case Else
+                LblMobMod.Text = MobModifier(2)
+        End Select
+
+        Select Case MobDamage
+            Case Is < 100
+                LblMobName.Text = MobName(0)
+            Case Is <= 200
+                LblMobName.Text = MobName(1)
+            Case Is <= 360
+                LblMobName.Text = MobName(2)
+            Case Else
+                LblMobName.Text = "ERROR"
+        End Select
     End Sub
 
     'Autoclclicker 

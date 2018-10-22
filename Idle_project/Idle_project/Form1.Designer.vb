@@ -60,6 +60,8 @@ Partial Class Form1
         Me.LblStatVIT = New System.Windows.Forms.Label()
         Me.LblStatWIS = New System.Windows.Forms.Label()
         Me.lblAutoLVL = New System.Windows.Forms.Label()
+        Me.LblMobMod = New System.Windows.Forms.Label()
+        Me.LblMobName = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'BtnMain
@@ -415,16 +417,36 @@ Partial Class Form1
         Me.LblStatWIS.TabIndex = 36
         Me.LblStatWIS.Text = "0"
         '
-        'LblAutoLVL
+        'lblAutoLVL
         '
         Me.lblAutoLVL.AutoSize = True
         Me.lblAutoLVL.ForeColor = System.Drawing.Color.White
         Me.lblAutoLVL.Location = New System.Drawing.Point(339, 444)
         Me.lblAutoLVL.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblAutoLVL.Name = "LblAutoLVL"
+        Me.lblAutoLVL.Name = "lblAutoLVL"
         Me.lblAutoLVL.Size = New System.Drawing.Size(13, 13)
         Me.lblAutoLVL.TabIndex = 41
         Me.lblAutoLVL.Text = "0"
+        '
+        'LblMobMod
+        '
+        Me.LblMobMod.AutoSize = True
+        Me.LblMobMod.ForeColor = System.Drawing.Color.White
+        Me.LblMobMod.Location = New System.Drawing.Point(616, 336)
+        Me.LblMobMod.Name = "LblMobMod"
+        Me.LblMobMod.Size = New System.Drawing.Size(45, 13)
+        Me.LblMobMod.TabIndex = 42
+        Me.LblMobMod.Text = "Label17"
+        '
+        'LblMobName
+        '
+        Me.LblMobName.AutoSize = True
+        Me.LblMobName.ForeColor = System.Drawing.Color.White
+        Me.LblMobName.Location = New System.Drawing.Point(663, 335)
+        Me.LblMobName.Name = "LblMobName"
+        Me.LblMobName.Size = New System.Drawing.Size(45, 13)
+        Me.LblMobName.TabIndex = 43
+        Me.LblMobName.Text = "Label17"
         '
         'Form1
         '
@@ -432,6 +454,8 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(795, 522)
+        Me.Controls.Add(Me.LblMobName)
+        Me.Controls.Add(Me.LblMobMod)
         Me.Controls.Add(Me.lblAutoLVL)
         Me.Controls.Add(Me.LblStatWIS)
         Me.Controls.Add(Me.LblStatVIT)
@@ -515,4 +539,6 @@ Partial Class Form1
     Friend WithEvents Label11 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents lblAutoLVL As Label
+    Friend WithEvents LblMobMod As Label
+    Friend WithEvents LblMobName As Label
 End Class
