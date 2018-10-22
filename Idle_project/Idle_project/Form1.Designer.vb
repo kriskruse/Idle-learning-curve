@@ -59,10 +59,6 @@ Partial Class Form1
         Me.LblStatAGI = New System.Windows.Forms.Label()
         Me.LblStatVIT = New System.Windows.Forms.Label()
         Me.LblStatWIS = New System.Windows.Forms.Label()
-        Me.LblMobName = New System.Windows.Forms.Label()
-        Me.test1 = New System.Windows.Forms.Label()
-        Me.test2 = New System.Windows.Forms.Label()
-        Me.test3 = New System.Windows.Forms.Label()
         Me.lblAutoLVL = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -419,50 +415,6 @@ Partial Class Form1
         Me.LblStatWIS.TabIndex = 36
         Me.LblStatWIS.Text = "0"
         '
-        'LblMobName
-        '
-        Me.LblMobName.AutoSize = True
-        Me.LblMobName.ForeColor = System.Drawing.Color.White
-        Me.LblMobName.Location = New System.Drawing.Point(674, 444)
-        Me.LblMobName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LblMobName.Name = "LblMobName"
-        Me.LblMobName.Size = New System.Drawing.Size(13, 13)
-        Me.LblMobName.TabIndex = 37
-        Me.LblMobName.Text = "0"
-        '
-        'test1
-        '
-        Me.test1.AutoSize = True
-        Me.test1.ForeColor = System.Drawing.Color.White
-        Me.test1.Location = New System.Drawing.Point(674, 461)
-        Me.test1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.test1.Name = "test1"
-        Me.test1.Size = New System.Drawing.Size(45, 13)
-        Me.test1.TabIndex = 38
-        Me.test1.Text = "Label11"
-        '
-        'test2
-        '
-        Me.test2.AutoSize = True
-        Me.test2.ForeColor = System.Drawing.Color.White
-        Me.test2.Location = New System.Drawing.Point(674, 483)
-        Me.test2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.test2.Name = "test2"
-        Me.test2.Size = New System.Drawing.Size(45, 13)
-        Me.test2.TabIndex = 39
-        Me.test2.Text = "Label16"
-        '
-        'test3
-        '
-        Me.test3.AutoSize = True
-        Me.test3.ForeColor = System.Drawing.Color.White
-        Me.test3.Location = New System.Drawing.Point(674, 431)
-        Me.test3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.test3.Name = "test3"
-        Me.test3.Size = New System.Drawing.Size(45, 13)
-        Me.test3.TabIndex = 40
-        Me.test3.Text = "Label11"
-        '
         'LblAutoLVL
         '
         Me.lblAutoLVL.AutoSize = True
@@ -481,10 +433,6 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(795, 522)
         Me.Controls.Add(Me.lblAutoLVL)
-        Me.Controls.Add(Me.test3)
-        Me.Controls.Add(Me.test2)
-        Me.Controls.Add(Me.test1)
-        Me.Controls.Add(Me.LblMobName)
         Me.Controls.Add(Me.LblStatWIS)
         Me.Controls.Add(Me.LblStatVIT)
         Me.Controls.Add(Me.LblStatAGI)
@@ -567,5 +515,4 @@ Partial Class Form1
     Friend WithEvents Label11 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents lblAutoLVL As Label
->>>>>>> 1d5a74379a6209966d214fccdbe06f5e0e6116df
 End Class
