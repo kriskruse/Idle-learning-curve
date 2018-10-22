@@ -6,9 +6,10 @@
     Dim SkillPoints As ULong = 0      'Skill points, used to level up all skills.
     Dim LVLUpCost As ULong = 5        'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
     Dim AutoClick1_cost As Double = 50  'Cost of autoclicker, going to be based on some mathemagics
-    Dim AutoclickExp As Double = 0      'Unknown, Kris can probably explain what it's going to be used for, "no i cant" -kris
-    Dim AutoClickLVL As ULong = 0
+    Dim AutoclickExp As Double = 0      'Amount of EXP given per Autoclick tick
+    Dim AutoClickLVL As ULong = 0       'The level shown to the player, reffers to the amount of times the autoclicker has been upgraded
     Dim KillAmount As Integer = 0
+    Dim y As Double = 0
 
     'Under this point is the 8 stats the character can have
     Dim StatAGI As Integer = 1          'Agility, increases dodge chance.
@@ -131,12 +132,13 @@
             EXP -= AutoClick1_cost      'Removes the cost from the current currency amount
             TimerAutoclick.Start()      'Starts the Timer/Clock that activates the clicks
             AutoclickExp += 0.01        'EXP gain per click, updates per lvl
-            AutoClick1_cost += Math.Pow(AutoclickExp * 100.2, 1.2 * AutoclickExp * 10) 'New cost calculations
+            AutoClick1_cost = CostCal(AutoclickExp, 0, 0)
             AutoClickLVL += 1           'Level shown to player
             lblAutoLVL.Text = AutoClickLVL  'Updates Label 
         End If
     End Sub
 
+    'Autoclick timer, Ticks ones every 1ms
     Private Sub TimerAutoclick_Tick(sender As Object, e As EventArgs) Handles TimerAutoclick.Tick
         EXP += AutoclickExp
         UpdateLabels()
