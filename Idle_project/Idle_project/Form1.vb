@@ -22,9 +22,13 @@
     Dim StatWIS As Integer = 1          'Wisdom, increases mana regen a lot and mana a little
     'Above this point is the 8 stats the character can have.
 
+    'Price calculations
+    Dim p As Double = 0
+
     'Mob Stats
     Dim MobHealth As Double = 0
     Dim MobDamage As Double = 0
+
     'Tooltips handler
     Dim CPS = 0
     Dim AutoTTip = "Current CPS:  0"
@@ -132,13 +136,27 @@
         End Select
     End Sub
 
+    'Calculates cost and return new value
+    Function Costcal(x, y, z)
+        If x > 0 & y = 0 & z = 0 Then
+            p = Math.Pow(x * 100, 0.95 * Math.Log(5))
+
+        ElseIf x > 0 & y > 0 & z = 0 Then
+            p = Math.Pow(x * 100, x * 100.2 + y * 101)
+        ElseIf x > 0 & y > 0 & z > 0 Then
+            p = Math.Pow(x * 100, x * 100.2 + y * 101 + z * y * 103.2)
+        End If
+        Return (p)
+    End Function
+
+
     'Autoclclicker 
     Private Sub AutoClickBuy_Click(sender As Object, e As EventArgs) Handles AutoClickBuy.Click
         If EXP >= AutoClick1_cost Then 'Matches prize and currency amount
             EXP -= AutoClick1_cost      'Removes the cost from the current currency amount
             TimerAutoclick.Start()      'Starts the Timer/Clock that activates the clicks
             AutoclickExp += 0.01        'EXP gain per click, updates per lvl
-            AutoClick1_cost = CostCal(AutoclickExp, 0, 0)
+            AutoClick1_cost = 50 + Costcal(AutoclickExp, 0, 0)
             AutoClickLVL += 1           'Level shown to player
             lblAutoLVL.Text = AutoClickLVL  'Updates Label 
 
