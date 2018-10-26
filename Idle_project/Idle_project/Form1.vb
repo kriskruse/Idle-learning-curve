@@ -22,12 +22,19 @@
     Dim StatWIS As Integer = 1          'Wisdom, increases mana regen a lot and mana a little
     'Above this point is the 8 stats the character can have.
 
+    'Tooltips handler
+    Dim CPS = 0
+    Dim AutoTTip = "Current CPS:  0"
+
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LVLUpCostCalc()                 'calculates the cost of every levelup button at startup.
         UpdateLabels()                  'updates every label on startup.
         TimerAutoclick.Enabled = False  'stops the timer on startup.
+
+
+
     End Sub
 
     Private Sub BtnMain_Click(sender As Object, e As EventArgs) Handles BtnMain.Click   'activates set functions when a button is clicked
@@ -103,6 +110,12 @@
             AutoClick1_cost = CostCal(AutoclickExp, 0, 0)
             AutoClickLVL += 1           'Level shown to player
             lblAutoLVL.Text = AutoClickLVL  'Updates Label 
+
+            'ToolTips for buttons.
+            CPS = AutoclickExp * 100
+            AutoTTip = "Current CPS:  " & CPS & " EXP/s"
+            TTAuto.SetToolTip(AutoClickBuy, AutoTTip)
+
         End If
     End Sub
 
@@ -111,6 +124,5 @@
         EXP += AutoclickExp
         UpdateLabels()
     End Sub
-
 
 End Class

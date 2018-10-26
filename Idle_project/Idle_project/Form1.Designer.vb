@@ -62,6 +62,7 @@ Partial Class Form1
         Me.lblAutoLVL = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.TTAuto = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'BtnMain
@@ -121,7 +122,7 @@ Partial Class Form1
         'BtnLVLUp
         '
         Me.BtnLVLUp.Location = New System.Drawing.Point(352, 449)
-        Me.BtnLVLUp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnLVLUp.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnLVLUp.Name = "BtnLVLUp"
         Me.BtnLVLUp.Size = New System.Drawing.Size(191, 70)
         Me.BtnLVLUp.TabIndex = 5
@@ -176,7 +177,7 @@ Partial Class Form1
         'BtnDarkVision
         '
         Me.BtnDarkVision.Location = New System.Drawing.Point(952, 52)
-        Me.BtnDarkVision.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnDarkVision.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnDarkVision.Name = "BtnDarkVision"
         Me.BtnDarkVision.Size = New System.Drawing.Size(100, 28)
         Me.BtnDarkVision.TabIndex = 10
@@ -208,7 +209,7 @@ Partial Class Form1
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(652, 32)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(292, 377)
         Me.Button1.TabIndex = 13
@@ -218,7 +219,7 @@ Partial Class Form1
         'Button3
         '
         Me.Button3.Location = New System.Drawing.Point(352, 32)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(292, 377)
         Me.Button3.TabIndex = 15
@@ -477,6 +478,9 @@ Partial Class Form1
         Me.Label18.TabIndex = 43
         Me.Label18.Text = "LVL"
         '
+        'TTAuto
+        '
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -570,4 +574,5 @@ Partial Class Form1
     Friend WithEvents lblAutoLVL As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label18 As Label
+    Friend WithEvents TTAuto As ToolTip
 End Class
