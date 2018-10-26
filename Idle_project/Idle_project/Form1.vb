@@ -115,36 +115,38 @@
         MobName(1) = "Rat"
         MobName(2) = "Kobold"
 
-        Select Case MobDamage
-            Case Is > MobHealth
-                LblMobMod.Text = MobModifier(1)
-            Case Is < MobHealth
-                LblMobMod.Text = MobModifier(2)
-            Case Else
-                LblMobMod.Text = MobModifier(2)
-        End Select
+        'Select Case MobDamage
+        'Case Is > MobHealth
+        'LblMobMod.Text = MobModifier(1)
+        'Case Is < MobHealth
+        'LblMobMod.Text = MobModifier(2)
+        'Case Else
+        'LblMobMod.Text = MobModifier(2)
+        'End Select
 
-        Select Case MobDamage
-            Case Is < 100
-                LblMobName.Text = MobName(0)
-            Case Is <= 200
-                LblMobName.Text = MobName(1)
-            Case Is <= 360
-                LblMobName.Text = MobName(2)
-            Case Else
-                LblMobName.Text = "ERROR"
-        End Select
+        'Select Case MobDamage
+        'Case Is < 100
+        'LblMobName.Text = MobName(0)
+        'Case Is <= 200
+        'LblMobName.Text = MobName(1)
+        'Case Is <= 360
+        'LblMobName.Text = MobName(2)
+        'Case Else
+        'LblMobName.Text = "ERROR"
+        'End Select
     End Sub
 
-    'Calculates cost and return new value
+    'Calculates cost and return new value, Basic mathemagicks
     Function Costcal(x, y, z)
         If x > 0 & y = 0 & z = 0 Then
             p = Math.Pow(x * 100, 0.95 * Math.Log(5))
 
         ElseIf x > 0 & y > 0 & z = 0 Then
-            p = Math.Pow(x * 100, x * 100.2 + y * 101)
+            p = Math.Pow(x + y * 100, 0.95 * Math.Log(5))
+
         ElseIf x > 0 & y > 0 & z > 0 Then
-            p = Math.Pow(x * 100, x * 100.2 + y * 101 + z * y * 103.2)
+            p = Math.Pow(x + y + z * 100, 0.95 * Math.Log(5))
+
         End If
         Return (p)
     End Function
