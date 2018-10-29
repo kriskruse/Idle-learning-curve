@@ -1,14 +1,16 @@
 ﻿Public Class Form1
-    Dim EXP As Double = 0              'experience, used as currency for leveling up, modifiers for EXP gained include: perception, monsters and (special bonus for endgame)
-    Dim LVL As ULong = 1              'Levels, used to increase amount of experience gained per click/autoclick
-    Dim DarkVisionLVL As ULong = 0    'Levels in skill: Darkvision, Used to increase EXP gained and to unlock next part of the story.
-    Dim DarkVisionCost As ULong = 1   'Cost to level up the skill darkvision. (Might make this an overall skill EXP thing)
-    Dim SkillPoints As ULong = 0      'Skill points, used to level up all skills.
-    Dim LVLUpCost As ULong = 5        'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
+    Dim EXP As Double = 0               'experience, used as currency for leveling up, modifiers for EXP gained include: perception, monsters and (special bonus for endgame)
+    Dim LVL As ULong = 1                'Levels, used to increase amount of experience gained per click/autoclick
+    Dim DarkVisionLVL As ULong = 0      'Levels in skill: Darkvision, Used to increase EXP gained and to unlock next part of the story.
+    Dim DarkVisionCost As ULong = 1     'Cost to level up the skill darkvision. (Might make this an overall skill EXP thing)
+    Dim SkillPoints As ULong = 0        'Skill points, used to level up all skills.
+    Dim LVLUpCost As ULong = 5          'Cost for leveling up, calculated based on this calculation: 1 + LVL^(0,25 * LVL)
     Dim AutoClick1_cost As Double = 50  'Cost of autoclicker, going to be based on some mathemagics
     Dim AutoclickExp As Double = 0      'Amount of EXP given per Autoclick tick
     Dim AutoClickLVL As ULong = 0       'The level shown to the player, reffers to the amount of times the autoclicker has been upgraded
-    Dim KillAmount As Integer = 0
+    Dim KillAmount As ULong = 0         'Amount of killed mobs
+    Dim MobLvl As ULong = 0             'Level of difficulty of mobs. Based on amount of mobs killed.
+    Dim BaseHealth As ULong = 360       'Base amount of health that mobs have.
     Dim y As Double = 0
 
     'Under this point is the 8 stats the character can have
@@ -96,17 +98,17 @@
         End If
     End Sub
 
-    Sub StartFight()
-
-    End Sub
-
     'Mob handling
     Public Sub Mobs()
         Dim MobName(2) As String
         Dim MobModifier(2) As String
 
-        'assigning values to each element
+        'Calculates the health and damage of mobs
+        MobLvlCalc(KillAmount)
+        MobHealth = (Math.Ceiling(Rnd() * MobLvl)) + 1
+        MobDamage = (Math.Ceiling(Rnd() * MobLvl)) + 1
 
+        'assigning values to each element
         MobModifier(0) = "Healthy"
         MobModifier(1) = "Tough"
         MobModifier(2) = "Average"
@@ -115,34 +117,45 @@
         MobName(1) = "Rat"
         MobName(2) = "Kobold"
 
-        'Select Case MobDamage
-        'Case Is > MobHealth
-        'LblMobMod.Text = MobModifier(1)
-        'Case Is < MobHealth
-        'LblMobMod.Text = MobModifier(2)
-        'Case Else
-        'LblMobMod.Text = MobModifier(2)
-        'End Select
+        Select Case MobDamage
+            Case Is > MobHealth
+                LblMobMod.Text = MobModifier(1)
+            Case Is < MobHealth
+                LblMobMod.Text = MobModifier(0)
+            Case Else
+                LblMobMod.Text = MobModifier(2)
+        End Select
 
-        'Select Case MobDamage
-        'Case Is < 100
-        'LblMobName.Text = MobName(0)
-        'Case Is <= 200
-        'LblMobName.Text = MobName(1)
-        'Case Is <= 360
-        'LblMobName.Text = MobName(2)
-        'Case Else
-        'LblMobName.Text = "ERROR"
-        'End Select
+        Select Case MobHealth
+            Case Is < 100
+                LblMobName.Text = MobName(0)
+            Case Is <= 200
+                LblMobName.Text = MobName(1)
+            Case Is <= 360
+                LblMobName.Text = MobName(2)
+            Case Else
+                LblMobName.Text = "ERROR"
+        End Select
+
+        LblMobDamage.Text = MobDamage
+        LblMobHealth.Text = MobHealth
+
     End Sub
 
-    'Calculates cost and return new value, Basic mathemagicks
-    Function Costcal(x, y, z)
-        If x > 0 & y = 0 & z = 0 Then
-            p = Math.Pow(x * 100, 0.95 * Math.Log(5))
+    'Calculates the mob level based on mob kills.
+    Function MobLvlCalc(x As Integer)
+        '*FIXME* Add stuff that properly calculates the level of mobs.
+        MobLvl = (x) + BaseHealth
+        Return MobLvl
+    End Function
 
-        ElseIf x > 0 & y > 0 & z = 0 Then
-            p = Math.Pow(x + y * 100, 0.95 * Math.Log(5))
+    'Calculates cost and return new value, Basic mathemagicks
+    Function Costcal(x, y, z) 'calculates the cost of different upgrades based on what values are entered into the function
+        If x > 0 & y = 0 & z = 0 Then 'If x is the only value to be used
+            p = Math.Pow(x * 100, 0.95 * Math.Log(5)) 'Creates an exponential graph used to calculate the cost of stuff using one value
+
+        ElseIf x > 0 & y > 0 & z = 0 Then 'If there are 2 values to be used
+            p = Math.Pow(x + y * 100, 0.95 * Math.Log(5)) '
 
         ElseIf x > 0 & y > 0 & z > 0 Then
             p = Math.Pow(x + y + z * 100, 0.95 * Math.Log(5))
@@ -176,4 +189,7 @@
         UpdateLabels()
     End Sub
 
+    Private Sub BtnStartFight_Click(sender As Object, e As EventArgs) Handles BtnStartFight.Click
+        Mobs()
+    End Sub
 End Class
