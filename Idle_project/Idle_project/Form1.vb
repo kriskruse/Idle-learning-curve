@@ -118,25 +118,26 @@
         MobName(2) = "Kobold"
 
         Select Case MobDamage
-            Case Is > MobHealth
-                LblMobMod.Text = MobModifier(1)
             Case Is < MobHealth
-                LblMobMod.Text = MobModifier(0)
+                LblMobMod.Text = MobModifier(0) 'sets the modifier for mobs to Healthy if the dammage is lower than health
+            Case Is > MobHealth
+                LblMobMod.Text = MobModifier(1) 'sets the modifier for mobs to Tough if the damage is higher than health
             Case Else
-                LblMobMod.Text = MobModifier(2)
+                LblMobMod.Text = MobModifier(2) 'sets the modifier for mobs to average if the damage is equal to health
         End Select
 
         Select Case MobHealth
             Case Is < 100
-                LblMobName.Text = MobName(0)
+                LblMobName.Text = MobName(0) 'sets the mobs name to slime if the mob health is lower than 100
             Case Is <= 200
-                LblMobName.Text = MobName(1)
+                LblMobName.Text = MobName(1) 'sets the mobs name to rat if the mob health is lower than or equal to 200
             Case Is <= 360
-                LblMobName.Text = MobName(2)
+                LblMobName.Text = MobName(2) 'sets the mobs name to kobold if the mob health is lower than or equal to 360
             Case Else
-                LblMobName.Text = "ERROR"
+                LblMobName.Text = "ERROR" 'if the calculation fucks up somehow, throw an error.
         End Select
 
+        'Test component, Shows the damage and health of mobs on test labels
         LblMobDamage.Text = MobDamage
         LblMobHealth.Text = MobHealth
 
@@ -155,10 +156,10 @@
             p = Math.Pow(x * 100, 0.95 * Math.Log(5)) 'Creates an exponential graph used to calculate the cost of stuff using one value
 
         ElseIf x > 0 & y > 0 & z = 0 Then 'If there are 2 values to be used
-            p = Math.Pow(x + y * 100, 0.95 * Math.Log(5)) '
+            p = Math.Pow(x + y * 100, 0.95 * Math.Log(5)) 'uses the two values by adding the value of y to the previous calculation
 
-        ElseIf x > 0 & y > 0 & z > 0 Then
-            p = Math.Pow(x + y + z * 100, 0.95 * Math.Log(5))
+        ElseIf x > 0 & y > 0 & z > 0 Then 'If there are 3 values to be used
+            p = Math.Pow(x + y + z * 100, 0.95 * Math.Log(5)) 'uses the third value z by adding z to the previous calculation.
 
         End If
         Return (p)
