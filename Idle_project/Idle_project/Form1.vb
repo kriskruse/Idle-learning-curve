@@ -9,7 +9,7 @@
     Dim KillAmount As ULong = 0         'Amount of killed mobs
     Dim MobLvl As ULong = 0             'Level of difficulty of mobs. Based on amount of mobs killed.
     Dim BaseHealth As ULong = 100       'Base amount of health that mobs have.
-    Dim AreaModifier As Double = 1      'Modifies health and damage of mobs based on the area
+    Dim Area As Double = 1              'Used for which area the player is in, decides things such as mob health, mob damage, and what kinds of mobs spawn.
     Dim y As Double = 0
 
     'Under this point is the 8 stats the character can have
@@ -24,7 +24,14 @@
     'Above this point is the 8 stats the character can have.
 
     'All of the costs for those stats
+    Dim AGIUpCost As ULong = 1
+    Dim ENDUpCost As ULong = 1
+    Dim INTUpCost As ULong = 1
     Dim PerUpCost As ULong = 1
+    Dim RESUpCost As ULong = 1
+    Dim STRUpCost As ULong = 1
+    Dim VITUpCost As ULong = 1
+    Dim WISUpCost As ULong = 1
 
     'Price calculations
     Dim p As Double = 0
@@ -70,7 +77,15 @@
 
     Sub LVLUpCostCalc()                 'Calculates what the next level costs.
         LVLUpCost = 1 + Math.Pow(LVL, 0.15 * LVL)   'sets the levelcost, based on the calculation: 1 + LVL^(0,15 * LVL)
+        AGIUpCost = Math.Pow(StatAGI, 0.1 * StatAGI)
+        ENDUpCost = Math.Pow(StatEND, 0.1 * StatEND)
+        INTUpCost = Math.Pow(StatINT, 0.1 * StatINT)
         PerUpCost = Math.Pow(StatPER, 0.1 * StatPER)
+        RESUpCost = Math.Pow(StatRES, 0.1 * StatRES)
+        STRUpCost = Math.Pow(StatSTR, 0.1 * StatSTR)
+        VITUpCost = Math.Pow(StatVIT, 0.1 * StatVIT)
+        WISUpCost = Math.Pow(StatWIS, 0.1 * StatWIS)
+
     End Sub
 
     Sub UpdateLabels()                  'Updates the Labels by setting the text of them equal to the actual values.
@@ -99,31 +114,66 @@
     End Sub
 
     Private Sub BtnSTRup_Click(sender As Object, e As EventArgs) Handles BtnSTRup.Click
-
+        If SkillPoints >= STRUpCost Then
+            StatSTR += 1
+            SkillPoints -= STRUpCost
+            LVLUpCostCalc()
+            UpdateLabels()
+        End If
     End Sub
 
     Private Sub BtnENDup_Click(sender As Object, e As EventArgs) Handles BtnENDup.Click
-
+        If SkillPoints >= ENDUpCost Then
+            StatEND += 1
+            SkillPoints -= ENDUpCost
+            LVLUpCostCalc()
+            UpdateLabels()
+        End If
     End Sub
 
     Private Sub BtnINTup_Click(sender As Object, e As EventArgs) Handles BtnINTup.Click
-
+        If SkillPoints >= INTUpCost Then
+            StatINT += 1
+            SkillPoints -= INTUpCost
+            LVLUpCostCalc()
+            UpdateLabels()
+        End If
     End Sub
 
     Private Sub BtnWISup_Click(sender As Object, e As EventArgs) Handles BtnWISup.Click
-
+        If SkillPoints >= WISUpCost Then
+            StatWIS += 1
+            SkillPoints -= WISUpCost
+            LVLUpCostCalc()
+            UpdateLabels()
+        End If
     End Sub
 
     Private Sub BtnVITup_Click(sender As Object, e As EventArgs) Handles BtnVITup.Click
-
+        If SkillPoints >= VITUpCost Then
+            StatVIT += 1
+            SkillPoints -= VITUpCost
+            LVLUpCostCalc()
+            UpdateLabels()
+        End If
     End Sub
 
     Private Sub BtnAGIup_Click(sender As Object, e As EventArgs) Handles BtnAGIup.Click
-
+        If SkillPoints >= AGIUpCost Then
+            StatAGI += 1
+            SkillPoints -= AGIUpCost
+            LVLUpCostCalc()
+            UpdateLabels()
+        End If
     End Sub
 
     Private Sub BtnRESup_Click(sender As Object, e As EventArgs) Handles BtnRESup.Click
-
+        If SkillPoints >= RESUpCost Then
+            StatRES += 1
+            SkillPoints -= RESUpCost
+            LVLUpCostCalc()
+            UpdateLabels()
+        End If
     End Sub
 
     'Mob handling
@@ -164,11 +214,11 @@
         End Select
 
         Select Case MobHealth
-            Case Is < BaseHealth / AreaModifier
+            Case Is < BaseHealth / Area
                 LblMobName.Text = MobName(0) 'sets the mobs name to slime if the mob health is lower than 100
-            Case Is <= (BaseHealth * 1.5) / AreaModifier
+            Case Is <= (BaseHealth * 1.5) / Area
                 LblMobName.Text = MobName(1) 'sets the mobs name to rat if the mob health is lower than or equal to 200
-            Case Is <= (BaseHealth * 2) / AreaModifier
+            Case Is <= (BaseHealth * 2) / Area
                 LblMobName.Text = MobName(2) 'sets the mobs name to kobold if the mob health is lower than or equal to 360
 
 
