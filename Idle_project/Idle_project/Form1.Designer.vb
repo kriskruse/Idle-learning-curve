@@ -32,14 +32,11 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblLVLCost = New System.Windows.Forms.Label()
         Me.AutoClickBuy = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.BtnDarkVision = New System.Windows.Forms.Button()
+        Me.BtnPerUp = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.LblSkillPoints = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.LblDarkVisionCost = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.TimerAutoclick = New System.Windows.Forms.Timer(Me.components)
         Me.lblAutoClickcost = New System.Windows.Forms.Label()
@@ -70,6 +67,14 @@ Partial Class Form1
         Me.BtnStartFight = New System.Windows.Forms.Button()
         Me.LblMobHealth = New System.Windows.Forms.Label()
         Me.LblMobDamage = New System.Windows.Forms.Label()
+        Me.TestKillAmount = New System.Windows.Forms.Label()
+        Me.BtnSTRup = New System.Windows.Forms.Button()
+        Me.BtnENDup = New System.Windows.Forms.Button()
+        Me.BtnINTup = New System.Windows.Forms.Button()
+        Me.BtnRESup = New System.Windows.Forms.Button()
+        Me.BtnAGIup = New System.Windows.Forms.Button()
+        Me.BtnVITup = New System.Windows.Forms.Button()
+        Me.BtnWISup = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BtnMain
@@ -162,26 +167,16 @@ Partial Class Form1
         Me.AutoClickBuy.Text = "Auto Grinder"
         Me.AutoClickBuy.UseVisualStyleBackColor = True
         '
-        'Label4
+        'BtnPerUp
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(629, 10)
-        Me.Label4.Name = "Label4"
-        Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label4.Size = New System.Drawing.Size(158, 13)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "What skill do you want to grind?"
-        '
-        'BtnDarkVision
-        '
-        Me.BtnDarkVision.Location = New System.Drawing.Point(714, 42)
-        Me.BtnDarkVision.Name = "BtnDarkVision"
-        Me.BtnDarkVision.Size = New System.Drawing.Size(75, 23)
-        Me.BtnDarkVision.TabIndex = 10
-        Me.BtnDarkVision.Text = "Dark Vision"
-        Me.BtnDarkVision.UseVisualStyleBackColor = True
+        Me.BtnPerUp.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnPerUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnPerUp.Location = New System.Drawing.Point(470, 397)
+        Me.BtnPerUp.Name = "BtnPerUp"
+        Me.BtnPerUp.Size = New System.Drawing.Size(30, 30)
+        Me.BtnPerUp.TabIndex = 10
+        Me.BtnPerUp.Text = "+"
+        Me.BtnPerUp.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -222,26 +217,6 @@ Partial Class Form1
         Me.Button3.TabIndex = 15
         Me.Button3.Text = "*TEMP* Story area"
         Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(711, 26)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(61, 13)
-        Me.Label6.TabIndex = 16
-        Me.Label6.Text = " Vision cost"
-        '
-        'LblDarkVisionCost
-        '
-        Me.LblDarkVisionCost.AutoSize = True
-        Me.LblDarkVisionCost.ForeColor = System.Drawing.Color.White
-        Me.LblDarkVisionCost.Location = New System.Drawing.Point(774, 26)
-        Me.LblDarkVisionCost.Name = "LblDarkVisionCost"
-        Me.LblDarkVisionCost.Size = New System.Drawing.Size(13, 13)
-        Me.LblDarkVisionCost.TabIndex = 17
-        Me.LblDarkVisionCost.Text = "0"
         '
         'Button4
         '
@@ -522,12 +497,107 @@ Partial Class Form1
         Me.LblMobDamage.TabIndex = 50
         Me.LblMobDamage.Text = "test"
         '
+        'TestKillAmount
+        '
+        Me.TestKillAmount.AutoSize = True
+        Me.TestKillAmount.ForeColor = System.Drawing.Color.White
+        Me.TestKillAmount.Location = New System.Drawing.Point(634, 426)
+        Me.TestKillAmount.Name = "TestKillAmount"
+        Me.TestKillAmount.Size = New System.Drawing.Size(24, 13)
+        Me.TestKillAmount.TabIndex = 51
+        Me.TestKillAmount.Text = "test"
+        '
+        'BtnSTRup
+        '
+        Me.BtnSTRup.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnSTRup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSTRup.Location = New System.Drawing.Point(470, 355)
+        Me.BtnSTRup.Name = "BtnSTRup"
+        Me.BtnSTRup.Size = New System.Drawing.Size(30, 30)
+        Me.BtnSTRup.TabIndex = 52
+        Me.BtnSTRup.Text = "+"
+        Me.BtnSTRup.UseVisualStyleBackColor = True
+        '
+        'BtnENDup
+        '
+        Me.BtnENDup.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnENDup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnENDup.Location = New System.Drawing.Point(470, 439)
+        Me.BtnENDup.Name = "BtnENDup"
+        Me.BtnENDup.Size = New System.Drawing.Size(30, 30)
+        Me.BtnENDup.TabIndex = 53
+        Me.BtnENDup.Text = "+"
+        Me.BtnENDup.UseVisualStyleBackColor = True
+        '
+        'BtnINTup
+        '
+        Me.BtnINTup.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnINTup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnINTup.Location = New System.Drawing.Point(470, 482)
+        Me.BtnINTup.Name = "BtnINTup"
+        Me.BtnINTup.Size = New System.Drawing.Size(30, 30)
+        Me.BtnINTup.TabIndex = 54
+        Me.BtnINTup.Text = "+"
+        Me.BtnINTup.UseVisualStyleBackColor = True
+        '
+        'BtnRESup
+        '
+        Me.BtnRESup.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnRESup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRESup.Location = New System.Drawing.Point(598, 355)
+        Me.BtnRESup.Name = "BtnRESup"
+        Me.BtnRESup.Size = New System.Drawing.Size(30, 30)
+        Me.BtnRESup.TabIndex = 55
+        Me.BtnRESup.Text = "+"
+        Me.BtnRESup.UseVisualStyleBackColor = True
+        '
+        'BtnAGIup
+        '
+        Me.BtnAGIup.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnAGIup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAGIup.Location = New System.Drawing.Point(598, 397)
+        Me.BtnAGIup.Name = "BtnAGIup"
+        Me.BtnAGIup.Size = New System.Drawing.Size(30, 30)
+        Me.BtnAGIup.TabIndex = 56
+        Me.BtnAGIup.Text = "+"
+        Me.BtnAGIup.UseVisualStyleBackColor = True
+        '
+        'BtnVITup
+        '
+        Me.BtnVITup.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnVITup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnVITup.Location = New System.Drawing.Point(598, 439)
+        Me.BtnVITup.Name = "BtnVITup"
+        Me.BtnVITup.Size = New System.Drawing.Size(30, 30)
+        Me.BtnVITup.TabIndex = 57
+        Me.BtnVITup.Text = "+"
+        Me.BtnVITup.UseVisualStyleBackColor = True
+        '
+        'BtnWISup
+        '
+        Me.BtnWISup.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnWISup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnWISup.Location = New System.Drawing.Point(598, 482)
+        Me.BtnWISup.Name = "BtnWISup"
+        Me.BtnWISup.Size = New System.Drawing.Size(30, 30)
+        Me.BtnWISup.TabIndex = 58
+        Me.BtnWISup.Text = "+"
+        Me.BtnWISup.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(792, 524)
+        Me.Controls.Add(Me.BtnWISup)
+        Me.Controls.Add(Me.BtnVITup)
+        Me.Controls.Add(Me.BtnAGIup)
+        Me.Controls.Add(Me.BtnRESup)
+        Me.Controls.Add(Me.BtnINTup)
+        Me.Controls.Add(Me.BtnENDup)
+        Me.Controls.Add(Me.BtnSTRup)
+        Me.Controls.Add(Me.TestKillAmount)
         Me.Controls.Add(Me.LblMobDamage)
         Me.Controls.Add(Me.LblMobHealth)
         Me.Controls.Add(Me.BtnStartFight)
@@ -554,14 +624,11 @@ Partial Class Form1
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lblAutoClickcost)
         Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.LblDarkVisionCost)
-        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.LblSkillPoints)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.BtnDarkVision)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.BtnPerUp)
         Me.Controls.Add(Me.AutoClickBuy)
         Me.Controls.Add(Me.lblLVLCost)
         Me.Controls.Add(Me.Label3)
@@ -588,14 +655,11 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents lblLVLCost As Label
     Friend WithEvents AutoClickBuy As Button
-    Friend WithEvents Label4 As Label
-    Friend WithEvents BtnDarkVision As Button
+    Friend WithEvents BtnPerUp As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents LblSkillPoints As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents Label6 As Label
-    Friend WithEvents LblDarkVisionCost As Label
     Friend WithEvents Button4 As Button
     Friend WithEvents TimerAutoclick As Timer
     Friend WithEvents lblAutoClickcost As Label
@@ -628,4 +692,12 @@ Partial Class Form1
     Friend WithEvents BtnStartFight As Button
     Friend WithEvents LblMobHealth As Label
     Friend WithEvents LblMobDamage As Label
+    Friend WithEvents TestKillAmount As Label
+    Friend WithEvents BtnSTRup As Button
+    Friend WithEvents BtnENDup As Button
+    Friend WithEvents BtnINTup As Button
+    Friend WithEvents BtnRESup As Button
+    Friend WithEvents BtnAGIup As Button
+    Friend WithEvents BtnVITup As Button
+    Friend WithEvents BtnWISup As Button
 End Class
